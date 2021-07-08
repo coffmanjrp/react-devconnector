@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { DashboardActions } from './';
 import { getCurrentProfile } from '../../actions/profile';
 import { Spinner } from '../layout';
 import PropTypes from 'prop-types';
@@ -28,19 +29,7 @@ const Dashboard = ({
           </p>
           {profile ? (
             <>
-              <div className="dash-buttons">
-                <a href="edit-profile.html" className="btn btn-light">
-                  <i className="fas fa-user-circle text-primary" /> Edit Profile
-                </a>
-                <a href="add-experience.html" className="btn btn-light">
-                  <i className="fab fa-black-tie text-primary" /> Add Experience
-                </a>
-                <a href="add-education.html" className="btn btn-light">
-                  <i className="fas fa-graduation-cap text-primary" /> Add
-                  Education
-                </a>
-              </div>
-
+              <DashboardActions />
               <h2 className="my-2">Experience Credentials</h2>
               <table className="table">
                 <thead>

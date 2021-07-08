@@ -5,7 +5,7 @@ import { Login, Register } from './components/auth';
 import { Alert, Landing, Navbar } from './components/layout';
 import { Dashboard } from './components/dashboard';
 import { PrivateRoute } from './components/routing';
-import { CreateProfile } from './components/profile-form';
+import { CreateProfile, EditProfile } from './components/profile-form';
 import store from './store';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
@@ -34,6 +34,7 @@ const App = () => {
               path="/create-profile"
               component={CreateProfile}
             />
+            <PrivateRoute exact path="/edit-profile" component={EditProfile} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
           </Switch>
