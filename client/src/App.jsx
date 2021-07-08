@@ -5,6 +5,7 @@ import { Login, Register } from './components/auth';
 import { Alert, Landing, Navbar } from './components/layout';
 import { Dashboard } from './components/dashboard';
 import { PrivateRoute } from './components/routing';
+import { CreateProfile } from './components/profile-form';
 import store from './store';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
@@ -28,6 +29,11 @@ const App = () => {
           <Alert />
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute
+              exact
+              path="/create-profile"
+              component={CreateProfile}
+            />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
           </Switch>
