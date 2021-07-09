@@ -6,6 +6,7 @@ import { Alert, Landing, Navbar } from './components/layout';
 import { Dashboard } from './components/dashboard';
 import { PrivateRoute } from './components/routing';
 import { Profiles } from './components/profiles';
+import { Profile } from './components/profile';
 import {
   AddEducation,
   AddExperience,
@@ -52,6 +53,7 @@ const App = () => {
               component={AddEducation}
             />
             <Route exact path="/profiles" component={Profiles} />
+            <Route exact path="/profile/:id" component={Profile} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
           </Switch>
