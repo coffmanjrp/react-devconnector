@@ -5,7 +5,12 @@ import { Login, Register } from './components/auth';
 import { Alert, Landing, Navbar } from './components/layout';
 import { Dashboard } from './components/dashboard';
 import { PrivateRoute } from './components/routing';
-import { CreateProfile, EditProfile } from './components/profile-form';
+import {
+  AddEducation,
+  AddExperience,
+  CreateProfile,
+  EditProfile,
+} from './components/profile-form';
 import store from './store';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
@@ -35,6 +40,16 @@ const App = () => {
               component={CreateProfile}
             />
             <PrivateRoute exact path="/edit-profile" component={EditProfile} />
+            <PrivateRoute
+              exact
+              path="/add-experience"
+              component={AddExperience}
+            />
+            <PrivateRoute
+              exact
+              path="/add-education"
+              component={AddEducation}
+            />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
           </Switch>
