@@ -5,6 +5,7 @@ import { Login, Register } from './components/auth';
 import { Alert, Landing, Navbar } from './components/layout';
 import { Dashboard } from './components/dashboard';
 import { PrivateRoute } from './components/routing';
+import { Profiles } from './components/profiles';
 import {
   AddEducation,
   AddExperience,
@@ -50,6 +51,7 @@ const App = () => {
               path="/add-education"
               component={AddEducation}
             />
+            <Route exact path="/profiles" component={Profiles} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
           </Switch>
