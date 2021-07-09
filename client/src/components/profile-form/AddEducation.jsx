@@ -30,8 +30,8 @@ const AddEducation = ({ addEducation, history }) => {
     <>
       <h1 className="large text-primary">Add An Education</h1>
       <p className="lead">
-        <i className="fas fa-code-branch"></i> Add any school, bootcamp, etc
-        that you have attended
+        <i className="fas fa-code-branch" /> Add any school, bootcamp, etc that
+        you have attended
       </p>
       <small>* = required field</small>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
