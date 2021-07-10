@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { ProfileAbout, ProfileTop } from './';
 import { Spinner } from '../layout';
 import { getProfileById } from '../../actions/profile';
 import PropTypes from 'prop-types';
@@ -34,64 +35,8 @@ const Profile = ({
               </Link>
             )}
           <div className="profile-grid my-1">
-            <div className="profile-top bg-primary p-2">
-              <img
-                className="round-img my-1"
-                src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200"
-                alt=""
-              />
-              <h1 className="large">John Doe</h1>
-              <p className="lead">Developer at Microsoft</p>
-              <p>Seattle, WA</p>
-              <div className="icons my-1">
-                <a href="#!" target="_blank" rel="noopener noreferrer">
-                  <i className="fas fa-globe fa-2x" />
-                </a>
-                <a href="#!" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-twitter fa-2x" />
-                </a>
-                <a href="#!" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-facebook fa-2x" />
-                </a>
-                <a href="#!" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-linkedin fa-2x" />
-                </a>
-                <a href="#!" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-youtube fa-2x" />
-                </a>
-                <a href="#!" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-instagram fa-2x" />
-                </a>
-              </div>
-            </div>
-
-            <div className="profile-about bg-light p-2">
-              <h2 className="text-primary">John's Bio</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed
-                doloremque nesciunt, repellendus nostrum deleniti recusandae
-                nobis neque modi perspiciatis similique?
-              </p>
-              <div className="line"></div>
-              <h2 className="text-primary">Skill Set</h2>
-              <div className="skills">
-                <div className="p-1">
-                  <i className="fa fa-check" /> HTML
-                </div>
-                <div className="p-1">
-                  <i className="fa fa-check" /> CSS
-                </div>
-                <div className="p-1">
-                  <i className="fa fa-check" /> JavaScript
-                </div>
-                <div className="p-1">
-                  <i className="fa fa-check" /> Python
-                </div>
-                <div className="p-1">
-                  <i className="fa fa-check" /> C#
-                </div>
-              </div>
-            </div>
+            <ProfileTop profile={profile} />
+            <ProfileAbout profile={profile} />
 
             <div className="profile-exp bg-white p-2">
               <h2 className="text-primary">Experience</h2>
