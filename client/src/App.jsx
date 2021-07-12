@@ -13,6 +13,7 @@ import {
   CreateProfile,
   EditProfile,
 } from './components/profile-form';
+import { Posts } from './components/posts';
 import store from './store';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
@@ -35,6 +36,10 @@ const App = () => {
         <section className="container">
           <Alert />
           <Switch>
+            <Route exact path="/profiles" component={Profiles} />
+            <Route exact path="/profile/:id" component={Profile} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute
               exact
@@ -52,10 +57,7 @@ const App = () => {
               path="/add-education"
               component={AddEducation}
             />
-            <Route exact path="/profiles" component={Profiles} />
-            <Route exact path="/profile/:id" component={Profile} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
+            <PrivateRoute exact path="/posts" component={Posts} />
           </Switch>
         </section>
       </Router>
