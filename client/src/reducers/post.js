@@ -1,5 +1,6 @@
 import {
   GET_POSTS,
+  ADD_POST,
   DELETE_POST,
   POST_ERROR,
   UPDATE_LIKES,
@@ -22,10 +23,16 @@ export default function post(state = initialState, action) {
         posts: payload,
         loading: false,
       };
+    case ADD_POST:
+      return {
+        ...state,
+        posts: [payload, ...state.posts],
+        loading: false,
+      };
     case DELETE_POST:
       return {
         ...state,
-        posts: state.post.filer((post) => post._id !== payload),
+        posts: state.posts.filter((post) => post._id !== payload),
         loading: false,
       };
     case POST_ERROR:
