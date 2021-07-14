@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { CommentForm } from './';
 import { Spinner } from '../layout';
 import { PostItem } from '../posts';
 import { getPost } from '../../actions/post';
@@ -23,6 +24,7 @@ const Post = ({ post: { post, loading }, getPost, match }) => {
             Back To Posts
           </Link>
           <PostItem post={post} showActions={false} />
+          <CommentForm postId={post._id} />
         </>
       )}
     </>
