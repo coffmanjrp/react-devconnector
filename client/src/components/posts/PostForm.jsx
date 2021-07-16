@@ -10,7 +10,6 @@ const PostForm = ({ addPost }) => {
     e.preventDefault();
 
     addPost({ text });
-    setText('');
   };
 
   return (

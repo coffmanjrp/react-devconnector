@@ -10,7 +10,6 @@ const CommentForm = ({ postId, addComment }) => {
     e.preventDefault();
 
     addComment(postId, { text });
-    setText('');
   };
 
   return (
